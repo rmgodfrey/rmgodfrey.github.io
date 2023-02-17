@@ -1,4 +1,4 @@
-import { trapFocus } from '/scripts/_modals.js';
+import { trapFocus } from './_modals.js';
 
 const projects = document.querySelectorAll('.project');
 const screenshots = document.querySelectorAll('.screenshot');
