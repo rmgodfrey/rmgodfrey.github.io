@@ -1,0 +1,475 @@
+// IMPORTS
+
+@use 'sass:color';
+@use 'sass:map';
+@use 'sass:math';
+
+// VARIABLES
+
+// Selector shorthands
+$headings: h1, h2, h3, h4, h5, h6;
+
+// Colors
+$background-color: #202020;
+$text-color: #E8FFE9;
+$link-color: #FFDFB4;
+
+// Text
+$main-font: 'Roboto', sans-serif;
+$heading-font: 'Sofia Sans', sans-serif;
+$line-height: 1.5;
+
+// Spacing
+$spacer: 8px;
+$space-between-icons: $spacer * 1;
+$section-heading-inline-padding: $spacer * 2;
+
+// Grid
+$number-of-grid-columns: 3;
+$grid-middle-column-width: 600px;
+$grid-left-margin-proportion: 0.4;
+$grid-right-margin-proportion: 0.6;
+$grid-column-gap: $spacer * 6;
+$grid-row-gap: $spacer * 3;
+$grid-outer-padding: $spacer * 8;
+
+// Background image in header
+$background-image-width: 1592px;
+$background-image-intrinsic-ratio: calc(4 / 3);
+
+// Screenshots
+$screenshot-inline-adjustment: 3.51%;
+$screenshot-top-adjustment: 3.99%;
+// $screenshot-bottom-adjustment: 4.65%;
+$screenshot-intrinsic-width: 3104px;
+$screenshot-intrinsic-height: 1846px;
+$screenshot-aspect-ratio: calc(
+  $screenshot-intrinsic-width / $screenshot-intrinsic-height
+);
+
+// Variables related to screenshot sizes in right margin
+$header-height: $spacer * 16;
+$screenshot-heading-font-size: 1.5rem;
+$screenshot-heading-max-height: $screenshot-heading-font-size * $line-height;
+$number-of-screenshots-per-project: 2;
+
+// Widths for media queries
+$medium-width-maximum: 1143px;
+
+// Section colors
+$section-colors: (
+  background: rgb(73, 95, 166),
+  projects: rgb(126, 90, 90),
+  skills: rgb(0, 101, 110)
+);
+
+// MIXINS
+
+@mixin heading-font {
+  font-family: $heading-font;
+  font-weight: 300;
+}
+
+@mixin section-colors($alpha, $alpha-hover) {
+  @each $section-name, $color in $section-colors {
+    &--#{$section-name} {
+      background-color: color.scale($color, $alpha: $alpha);
+    }
+    &--#{$section-name}:hover {
+      background-color: color.scale($color, $alpha: $alpha-hover);
+    }
+  }
+}
+
+@mixin right-margin {
+  position: fixed;
+  max-width: min(var(--max-width), calc(
+    $grid-right-margin-proportion * (
+      100vw
+      - $grid-middle-column-width
+      - $grid-column-gap * 2
+      - $grid-outer-padding * 2
+    )
+  ));
+  @media (max-width: $medium-width-maximum) {
+    display: none;
+  }
+}
+
+// STYLE RULES
+
+// General
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: $main-font;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: $line-height;
+  margin: 0;
+}
+
+#{$headings}, p, dt, dd, ul, button, figure {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#{$headings}, hgroup {
+  @include heading-font;
+  text-transform: uppercase;
+}
+
+a, .icon {
+  appearance: none;
+  background-color: unset;
+  border: none;
+  color: unset;
+  cursor: pointer;
+  font-size: unset;
+  text-decoration-line: unset;
+}
+
+a:not(
+  .icon,
+  .nav__link
+) {
+  color: $link-color;
+  font-weight: bolder;
+  text-decoration-line: underline;
+  &:hover {
+    text-decoration-line: none;
+  }
+}
+
+main {
+  display: contents;
+}
+
+.icons {
+  display: inline-flex;
+  flex-direction: row;
+  gap: $space-between-icons;
+}
+
+.list {
+  padding-left: $section-heading-inline-padding;
+  list-style-type: unset;
+}
+
+.icon:hover {
+  color: color.scale($text-color, $alpha: -20%);
+}
+
+// Grid
+
+.grid {
+  display: grid;
+  grid-template-columns:
+    [left-margin-start]  #{$grid-left-margin-proportion}fr [left-margin-end]
+                         #{$grid-middle-column-width}
+    [right-margin-start] #{$grid-right-margin-proportion}fr [right-margin-end];
+  grid-template-rows: [header-start] $header-height [header-end]
+                                     auto
+                      [footer-start] auto [footer-end];
+  column-gap: $grid-column-gap;
+  row-gap: $grid-row-gap;
+  padding: $grid-outer-padding;
+  overflow: hidden;
+}
+
+// Header
+
+.header {
+  display: contents;
+}
+
+.header__text-and-image {
+  display: grid;
+  grid-column-start: left-margin-end;
+  grid-column-end: right-margin-start;
+  grid-row-start: header-start;
+  grid-row-end: header-end;
+  grid-template-columns: [start] auto [middle] auto [end];
+  grid-template-rows: [start] auto [end];
+}
+
+.header__text {
+  grid-column-start: middle;
+  grid-column-end: end;
+  grid-row-start: start;
+  grid-row-end: end;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: $spacer;
+  text-align: right;
+  text-shadow: 0 0 8px $background-color;
+}
+
+.header__text-heading {
+  display: contents;
+}
+
+.header__image-and-overlay {
+  grid-column-start: start;
+  grid-column-end: middle;
+  grid-row-start: start;
+  grid-row-end: end;
+  height: 0;
+  width: 0;
+  position: relative;
+  top: -384px;
+  left: -702px;
+  z-index: -10;
+}
+
+.header__image {
+  width: $background-image-width;
+  position: absolute;
+}
+
+.header__overlay {
+  width: $background-image-width;
+  height: calc(
+            $background-image-width / $background-image-intrinsic-ratio
+          );
+  position: absolute;
+  background-image:
+    linear-gradient(to right, transparent 58%, 64%, $background-color 74%),
+    linear-gradient(to bottom, transparent 50%, 55%, $background-color 65%),
+    radial-gradient(
+      ellipse 50% 50% at 52% 38%,
+      transparent 20%, 50%, $background-color
+    );
+}
+
+// Nav
+
+.nav {
+  grid-column-start: right-margin-start;
+  grid-column-end: right-margin-end;
+  grid-row-start: header-start;
+  grid-row-end: header-end;
+  @include heading-font;
+}
+
+.nav__link {
+  display: block;
+  padding: 0 ($spacer * 3) 0 ($spacer * 3);
+  @include section-colors($alpha: -100%, $alpha-hover: -20%);
+  &:hover {
+    font-weight: bolder;
+  }
+}
+
+.nav__content {
+  @include right-margin;
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid $text-color;
+  margin-top: 0.75rem;
+}
+
+// Section
+
+.section__container {
+  grid-column-start: left-margin-end;
+  grid-column-end: right-margin-start;
+  grid-row-start: header-end;
+  grid-row-end: footer-start;
+  display: flex;
+  flex-direction: column;
+  gap: $grid-row-gap;
+}
+
+.section__backdrop {
+  @include section-colors($alpha: -50%, $alpha-hover: -20%);
+  border-radius: 0.5rem;
+  position: relative;
+  &:hover {
+    z-index: 10;
+  }
+}
+
+.section__content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacer * 2;
+  padding: $spacer * 4;
+  #{$headings} {
+    background-color: rgb(160 160 160 / 22%);
+    align-self: flex-start;
+    padding: ($spacer * 0.5) $section-heading-inline-padding;
+  }
+}
+
+// Footer
+
+.footer {
+  grid-column-start: left-margin-end;
+  grid-column-end: right-margin-start;
+  grid-row-start: footer-start;
+  grid-row-end: footer-end;
+  font-size: 0.8rem;
+  text-align: right;
+  line-height: 1;
+}
+
+// Project
+
+.project__container {
+  display: contents;
+}
+
+.project {
+  display: flex;
+  gap: $space-between-icons;
+}
+
+// Screenshot
+
+.screenshot__container {
+  grid-column-start: right-margin-start;
+  grid-column-end: right-margin-end;
+  grid-row-start: header-end;
+  grid-row-end: footer-start;
+}
+
+.screenshot__project {
+  $max-height: calc(
+    100vh - $grid-outer-padding * 2 - $header-height - $grid-row-gap
+  );
+  --max-width: calc(
+    ((#{$max-height} - #{$screenshot-heading-max-height}) / 2)
+    * #{$screenshot-aspect-ratio}
+  );
+  @include right-margin;
+  > {
+    #{$headings} {
+      font-size: $screenshot-heading-font-size;
+      max-height: $screenshot-heading-max-height;
+    }
+  }
+}
+
+.screenshot {
+  max-width: 100%;
+  cursor: zoom-in;
+  .screenshot__container--margin & {
+    display: block;
+    margin-left: -$screenshot-inline-adjustment;
+  }
+}
+
+.screenshot--open {
+  visibility: hidden;
+}
+
+.screenshot__container--inline {
+  display: none;
+}
+
+.screenshot__theatre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgb(0 0 0 / 60%);
+  z-index: 20;
+}
+
+.screenshot__frame {
+  position: relative;
+  .screenshot {
+    cursor: zoom-out;
+    max-width: 100%;
+    max-height: 100vh;
+  }
+}
+
+// Modal
+
+.modal__close-button {
+  position: absolute;
+  top: calc($screenshot-top-adjustment - 0.5em);
+  right: calc($screenshot-inline-adjustment - 0.5em);
+  background: $background-color;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px $background-color;
+  font-size: 2.25rem;
+  line-height: 0;
+}
+
+// MEDIA QUERIES
+
+// Add inline thumbnails when sidebar thumbnails vanish (see right-margin mixin)
+
+@media (max-width: $medium-width-maximum) {
+  .screenshot__container--inline {
+    display: flex;
+  }
+  .screenshot__toggle {
+    display: none;
+  }
+}
+
+// Remove margins for smaller screen sizes
+
+@media (
+  max-width: $grid-middle-column-width
+             + $grid-column-gap * $number-of-grid-columns
+             + $grid-outer-padding * 2
+) {
+  .grid {
+    grid-template-columns:
+      [left-margin-start]  0fr [left-margin-end]
+                           1fr
+      [right-margin-start] 0fr [right-margin-end];
+    column-gap: 0;
+  }
+}
+
+// Adjust header image gradient
+
+@media (max-width: 700px) {
+  .header__overlay {
+    background-image: linear-gradient(to right, transparent 54%, 60%, #202020 74%),
+                      linear-gradient(to bottom, transparent 50%, 55%, #202020 65%),
+                      radial-gradient(ellipse 50% 50% at 52% 38%, transparent 20%, 50%, #202020);
+  }
+}
+
+// Adjust font size
+
+@media (max-width: 568px) {
+  body {
+    font-size: 1rem;
+  }
+  .header__image-and-overlay {
+    left: -734px;
+  }
+}
+
+// For smallest screens, remove header image and reduce padding
+
+@media (max-width: 507px) {
+  .header__image-and-overlay {
+    display: none;
+  }
+  .grid {
+    padding-inline: $spacer * 2;
+  }
+  .section__content {
+    padding: $spacer * 2;
+  }
+}

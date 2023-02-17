@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,400;1,500&family=Sofia+Sans:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <script src="https://kit.fontawesome.com/52f3cdad1f.js" crossorigin="anonymous"></script>
+    <script src="/scripts/main.js" type="module"></script>
+    <title>Ross Godfrey — Full-Stack Web Developer</title>
+  </head>
+  <body>
+    <div class="grid">
+      <header class="header">
+        <div class="header__text-and-image">
+          <div class="header__text">
+            <hgroup class="header__text-heading">
+              <h1>Ross Godfrey</h1>
+              <p>Full-stack web developer</p>
+            </hgroup>
+            <ul class="icons">
+              <li>
+                <a class="icon" href="https://github.com/rmgodfrey">
+                  <svg class="fa-brands fa-github" title="GitHub" height="1em" width="1em"></svg>
+                </a>
+              </li>
+              <li>
+                <a class="icon" href="https://www.linkedin.com/in/rossmgodfrey/">
+                  <svg class="fa-brands fa-linkedin" title="LinkedIn" height="1em" width="1em"></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="header__image-and-overlay">
+            <img class="header__image" src="./images/godfrey_1.jpg" alt="A view of Ross Godfrey standing in a park on a hill, overlooking a body of water with islands.">
+            <div class="header__overlay"></div>
+          </div>
+        </div>
+        <nav class="nav">
+          <ul class="nav__content">
+            <li><a class="nav__link nav__link--background" href="#background">Background</a></li>
+            <li><a class="nav__link nav__link--projects" href="#projects">Projects</a></li>
+            <li><a class="nav__link nav__link--skills" href="#skills">Skills</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div class="section__container">
+          <section class="section" id="background">
+            <div class="section__backdrop section__backdrop--background">
+              <div class="section__content">
+                <h2>Background</h2>
+                <p>
+                  My schooling is in linguistics: first as an undergraduate, and then as a graduate student. Toward the end of my studies, when I realized a career in academia was not in the cards, I began to learn to program, focusing on Python. Later, I turned my attention to web development, taking a short course from <a href="https://junocollege.com/" target="_blank">Juno College of Technology</a>, followed by a full-stack bootcamp at <a href="https://www.lewagon.com" target="_blank">Le Wagon</a>. I’m trained in <a href="https://rubyonrails.org/" target="_blank">Rails</a>, and have been learning <a href="https://reactjs.org/" target="_blank">React</a> independently over the past few months.
+                <p>
+                  I enjoy finding solutions to puzzles — for me, hunting down bugs in code is often more pleasurable than it is frustrating. I enjoyed tackling <a href="https://adventofcode.com/" target="_blank">Advent of Code</a> last December, and have started to started to post <a href="https://github.com/rmgodfrey/advent_of_code" target="_blank">my solutions on GitHub</a>.
+                <p>
+                  I’m a Canadian currently based in Berlin, where my wife works as a postdoctoral researcher.
+              </div>
+            </div>
+          </section>
+          <section class="section" id="projects">
+            <div class="section__backdrop section__backdrop--projects">
+              <div class="section__content">
+                <h2>Projects</h2>
+                <p>These Rails apps were created in a team of four as part of Le Wagon’s web development bootcamp:</p>
+                <dl class="project__container">
+                  <dt class="project" data-project-name="choice-point">
+                    <a href="http://www.choicepoint.me" target="_blank">ChoicePoint</a>
+                    <ul class="icons">
+                      <li class="screenshot__toggle">
+                        <button class="icon">
+                          <svg class="fa-solid fa-camera" title="View screenshots" height="1em" width="1em">
+                          </svg>
+                        </button>
+                      </li>
+                      <li>
+                        <a class="icon" href="https://github.com/GeoniX404/choicepoint" target="_blank">
+                          <svg class="fa-brands fa-github" title="Source code on GitHub" height="1em" width="1em">
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </dt>
+                  <dd>
+                    <div class="screenshot__container screenshot__container--inline">
+                      <figure>
+                        <img src="/images/choice_point/homepage.png" alt="A screenshot of the home page of ChoicePoint, listing various questions that users have posted." class="screenshot" tabindex="0">
+                      </figure>
+                      <figure>
+                        <img src="/images/choice_point/past_choice_points.png" alt="A screenshot of the user’s past questions on ChoicePoint, with horizontal bars displaying scores for various options, and an interface allowing the user to say which option they chose, and whether it was successful." class="screenshot" tabindex="0">
+                      </figure>
+                    </div>
+                    <p>For people who have trouble making decisions. Describe your difficult decision, and other users will vote on the best option. If the choice you make turns out to be successful, then users who voted for it will receive a reputation boost, meaning their votes will count for more in the future.</p>
+                  </dd>
+                  <dt class="project" data-project-name="lft">
+                    <a href="https://looking-for-tutor.herokuapp.com" target="_blank">LFT (Looking for Tutor)</a>
+                    <ul class="icons">
+                      <li class="screenshot__toggle">
+                        <button class="icon">
+                          <svg class="fa-solid fa-camera" title="View screenshots" height="1em" width="1em">
+                          </svg>
+                        </button>
+                      </li>
+                      <li>
+                        <a class="icon" href="https://github.com/rmgodfrey/lft" target="_blank">
+                          <svg class="fa-brands fa-github" title="Source code on GitHub" height="1em" width="1em">
+                          </svg>
+                        </a>
+                      </li>
+                    </ul>
+                  </dt>
+                  <dd>
+                    <div class="screenshot__container screenshot__container--inline">
+                      <figure>
+                        <img src="/images/lft/homepage.png" alt="A screenshot of the home page of LFT, listing various lessons offered by tutors." class="screenshot" tabindex="0">
+                      </figure>
+                      <figure>
+                        <img src="/images/lft/lesson.png"
+                            alt="A screenshot of a lesson advertisement on LFT, with an interface allowing the user to book the lesson. The ad also contains a map showing the location of the lesson, as well as another user’s review of the lesson." class="screenshot" tabindex="0">
+                      </figure>
+                    </div>
+                    <p>Connects students with tutors in a variety of subjects, all over the world. Students can book lessons with tutors, and can leave reviews, to let other students know how the lesson went.</p>
+                  </dd>
+                </dl>
+              </div>
+            </div>
+          </section>
+          <section class="section" id="skills">
+            <div class="section__backdrop section__backdrop--skills">
+              <div class="section__content">
+                <h2>Frameworks, Languages, and Tools</h2>
+                <ul class="list">
+                  <li>I build web apps with <b>Ruby on Rails</b>.</li>
+                  <li>I have experience with the <b>Bootstrap</b> CSS + JS library.</li>
+                  <li>I like to use <b>Sass</b> to generate my CSS.</li>
+                  <li>My first programming language was <b>Python</b>.</li>
+                  <li>I’m comfortable with vanilla <b>JavaScript</b>.</li>
+                  <li>I’ve been teaching myself <b>React</b>.</li>
+                  <Li>I’m familiar with <b>relational databases</b> and <b>SQL queries</b>.</Li>
+                  <li>Naturally, I use <b>Git</b> for version control.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
+        <aside class="screenshot__container screenshot__container--margin">
+          <div class="screenshot__project" data-project-name="choice-point" hidden>
+            <h2>ChoicePoint</h2>
+            <figure>
+              <img src="/images/choice_point/homepage.png" alt="A screenshot of the home page of ChoicePoint, listing various questions that users have posted." class="screenshot" tabindex="0">
+            </figure>
+            <figure>
+              <img src="/images/choice_point/past_choice_points.png" alt="A screenshot of the user’s past questions on ChoicePoint, with horizontal bars displaying scores for various options, and an interface allowing the user to say which option they chose, and whether it was successful." class="screenshot" tabindex="0">
+            </figure>
+          </div>
+          <div class="screenshot__project" data-project-name="lft" hidden>
+            <h2>LFT</h2>
+            <figure>
+              <img src="/images/lft/homepage.png" alt="A screenshot of the home page of LFT, listing various lessons offered by tutors." class="screenshot" tabindex="0">
+            </figure>
+            <figure>
+              <img src="/images/lft/lesson.png" alt="A screenshot of a lesson advertisement on LFT, with an interface allowing the user to book the lesson. The ad also contains a map showing the location of the lesson, as well as another user’s review of the lesson." class="screenshot" tabindex="0">
+            </figure>
+          </div>
+        </aside>
+      </main>
+      <footer class="footer">
+        Last updated <time datetime="2023-02-09">February 16, 2023</time>.
+      </footer>
+    </div>
+    <div class="modal screenshot__theatre" hidden>
+      <div class="modal__focus-start" tabindex="0"></div>
+      <figure class="screenshot__frame">
+        <button class="icon modal__close-button">
+          <svg class="fa-regular fa-circle-xmark"></svg>
+        </button>
+      </figure>
+      <div class="modal__focus-end" tabindex="0"></div>
+    </div>
+  </body>
+</html>
