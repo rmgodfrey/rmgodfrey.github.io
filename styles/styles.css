@@ -37,7 +37,7 @@ a, .icon {
 a:not(.icon,
 .nav__link) {
   color: #FFDFB4;
-  font-weight: bolder;
+  font-weight: 500;
   text-decoration-line: underline;
 }
 a:not(.icon,
@@ -162,7 +162,7 @@ main {
   background-color: rgba(0, 101, 110, 0.8);
 }
 .nav__link:hover {
-  font-weight: bolder;
+  font-weight: 400;
 }
 
 .nav__content {

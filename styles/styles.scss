@@ -140,7 +140,7 @@ a:not(
   .nav__link
 ) {
   color: $link-color;
-  font-weight: bolder;
+  font-weight: 500;
   text-decoration-line: underline;
   &:hover {
     text-decoration-line: none;
@@ -264,7 +264,7 @@ main {
   padding: 0 ($spacer * 3) 0 ($spacer * 3);
   @include section-colors($alpha: -100%, $alpha-hover: -20%);
   &:hover {
-    font-weight: bolder;
+    font-weight: 400;
   }
 }
 
