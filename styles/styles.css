@@ -45,6 +45,10 @@ a:not(.icon,
   text-decoration-line: none;
 }
 
+b {
+  font-weight: 500;
+}
+
 main {
   display: contents;
 }
