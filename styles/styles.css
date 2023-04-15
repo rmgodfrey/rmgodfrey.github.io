@@ -225,7 +225,7 @@ main {
   gap: 16px;
   padding: 32px;
 }
-.section__content h1, .section__content h2, .section__content h3, .section__content h4, .section__content h5, .section__content h6 {
+.section__content h2 {
   background-color: rgba(160, 160, 160, 0.22);
   align-self: flex-start;
   padding: 4px 16px;

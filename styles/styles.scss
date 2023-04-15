@@ -306,7 +306,7 @@ main {
   flex-direction: column;
   gap: $spacer * 2;
   padding: $spacer * 4;
-  #{$headings} {
+  h2 {
     background-color: rgb(160 160 160 / 22%);
     align-self: flex-start;
     padding: ($spacer * 0.5) $section-heading-inline-padding;
