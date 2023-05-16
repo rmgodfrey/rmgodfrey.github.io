@@ -98,7 +98,7 @@ Array.prototype.forEach.call(
   projects,
   project => {
     const button = project.querySelector('.screenshot__toggle');
-    button.addEventListener(
+    button?.addEventListener(
       'click', revealSidebarThumbnails(project.dataset.projectName)
     );
   }
