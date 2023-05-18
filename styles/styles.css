@@ -45,7 +45,7 @@ a:not(.icon,
   text-decoration-line: none;
 }
 
-b {
+b, .project {
   font-weight: 500;
 }
 
