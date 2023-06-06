@@ -67,98 +67,121 @@
                 <h2>Projects</h2>
                 <h3>React</h3>
                 <dl class="project__container">
-                  <dt class="project">
-                    <a href="https://rmgodfrey.github.io/crossword" target="_blank">Rossword</a>
-                    <ul class="icons">
-                      <li>
-                        <a class="icon" href="https://github.com/rmgodfrey/crossword" target="_blank">
-                          <svg class="fa-brands fa-github" title="Source code on GitHub" height="1em" width="1em">
-                          </svg>
-                        </a>
-                      </li>
-                    </ul>
-                  </dt>
-                  <dd>
-                    <p>A crossword interface, based on the one used by <a href="https://www.theguardian.com/crosswords" target="_blank">The Guardian</a>. My goal for this front-end project is simply to deliver a smooth user experience, supporting keyboard and tab navigation, mouse clicks (or touch-screen presses) on crossword cells and clues, the ability to check and reveal answers, etc. In other words, all the things a user would typically take for granted.</p>
-                  </dd>
+                  <div class="project" data-project-name="rossword">
+                    <dt>
+                      <a href="https://rmgodfrey.github.io/crossword" target="_blank"><span class="project__title">Rossword</span></a>
+                      <ul class="icons">
+                        <li class="screenshot__toggle">
+                          <button class="icon">
+                            <svg class="fa-solid fa-camera" title="See GIF" height="1em" width="1em">
+                            </svg>
+                          </button>
+                        </li>
+                        <li>
+                          <a class="icon" href="https://github.com/rmgodfrey/crossword" target="_blank">
+                            <svg class="fa-brands fa-github" title="Source code on GitHub" height="1em" width="1em">
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </dt>
+                    <dd>
+                      <div class="screenshot__container screenshot__container--inline">
+                        <figure>
+                          <img src="/images/rossword/rossword.gif" alt="A short video displays the Rossword in action. First, the user answers 10 Across (“Outer portions of bread”) with the word “crests”, then clicks the “Check word” button to discover that the “e” is incorrect. The user replaces the “e” with a “u”. The user then scrolls to 29–30 Down, which asks for the blanks to be filled in the phrase “Living ___-___ in my head”. The user types “rent” for the first blank, clicks “Reveal letter” to learn that the second blank starts with an “f”, and finishes by typing “ree”." class="screenshot" tabindex="0">
+                        </figure>
+                      </div>
+                      <p>A crossword interface, based on the one used by <a href="https://www.theguardian.com/crosswords" target="_blank">The Guardian</a>. My goal for this front-end project is simply to deliver a smooth user experience, supporting keyboard and tab navigation, mouse clicks (or touch-screen presses) on crossword cells and clues, the ability to check and reveal answers, etc. In other words, all the things a user would typically take for granted.</p>
+                    </dd>
+                  </div>
                 </dl>
                 <h3>Rails</h3>
                 <p>These Rails apps were created in a team of four as part of Le Wagon’s web development bootcamp:</p>
                 <dl class="project__container">
-                  <dt class="project" data-project-name="choice-point">
-                    <a href="http://www.choicepoint.me" target="_blank">ChoicePoint</a>
-                    <ul class="icons">
-                      <li class="screenshot__toggle">
-                        <button class="icon">
-                          <svg class="fa-solid fa-camera" title="View screenshots" height="1em" width="1em">
-                          </svg>
-                        </button>
-                      </li>
-                      <li>
-                        <a class="icon" href="https://github.com/GeoniX404/choicepoint" target="_blank">
-                          <svg class="fa-brands fa-github" title="Source code on GitHub" height="1em" width="1em">
-                          </svg>
-                        </a>
-                      </li>
-                    </ul>
-                  </dt>
-                  <dd>
-                    <div class="screenshot__container screenshot__container--inline">
-                      <figure>
-                        <img src="/images/choice_point/homepage.png" alt="A screenshot of the home page of ChoicePoint, listing various questions that users have posted." class="screenshot" tabindex="0">
-                      </figure>
-                      <figure>
-                        <img src="/images/choice_point/past_choice_points.png" alt="A screenshot of the user’s past questions on ChoicePoint, with horizontal bars displaying scores for various options, and an interface allowing the user to say which option they chose, and whether it was successful." class="screenshot" tabindex="0">
-                      </figure>
-                    </div>
-                    <p>For people who have trouble making decisions. Describe your difficult decision, and other users will vote on the best option. If the choice you make turns out to be successful, then users who voted for it will receive a reputation boost, meaning their votes will count for more in the future.</p>
-                  </dd>
-                  <dt class="project" data-project-name="lft">
-                    <a href="https://looking-for-tutor.herokuapp.com" target="_blank">LFT (Looking for Tutor)</a>
-                    <ul class="icons">
-                      <li class="screenshot__toggle">
-                        <button class="icon">
-                          <svg class="fa-solid fa-camera" title="View screenshots" height="1em" width="1em">
-                          </svg>
-                        </button>
-                      </li>
-                      <li>
-                        <a class="icon" href="https://github.com/rmgodfrey/lft" target="_blank">
-                          <svg class="fa-brands fa-github" title="Source code on GitHub" height="1em" width="1em">
-                          </svg>
-                        </a>
-                      </li>
-                    </ul>
-                  </dt>
-                  <dd>
-                    <div class="screenshot__container screenshot__container--inline">
-                      <figure>
-                        <img src="/images/lft/homepage.png" alt="A screenshot of the home page of LFT, listing various lessons offered by tutors." class="screenshot" tabindex="0">
-                      </figure>
-                      <figure>
-                        <img src="/images/lft/lesson.png"
-                            alt="A screenshot of a lesson advertisement on LFT, with an interface allowing the user to book the lesson. The ad also contains a map showing the location of the lesson, as well as another user’s review of the lesson." class="screenshot" tabindex="0">
-                      </figure>
-                    </div>
-                    <p>Connects students with tutors in a variety of subjects, all over the world. Students can book lessons with tutors, and can leave reviews, to let other students know how the lesson went.</p>
-                  </dd>
+                  <div class="project" data-project-name="choice-point">
+                    <dt>
+                      <a href="http://www.choicepoint.me" target="_blank"><span class="project__title">ChoicePoint</span></a>
+                      <ul class="icons">
+                        <li class="screenshot__toggle">
+                          <button class="icon">
+                            <svg class="fa-solid fa-camera" title="See GIF" height="1em" width="1em">
+                            </svg>
+                          </button>
+                        </li>
+                        <li>
+                          <a class="icon" href="https://github.com/GeoniX404/choicepoint" target="_blank">
+                            <svg class="fa-brands fa-github" title="Source code on GitHub" height="1em" width="1em">
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </dt>
+                    <dd>
+                      <div class="screenshot__container screenshot__container--inline">
+                        <figure>
+                          <img src="/images/choice_point/choice_point.gif" alt="A short video displays ChoicePoint in action. First, the user answers the question “What TV show should I start watching?” by voting for the option “Better Call Saul.” Then, the user navigates to their past choice points; we see that they had asked where they should go to college, and that “University of Southern California” was the most popular answer. The user indicates that they indeed chose this option, and that it was successful for them." class="screenshot" tabindex="0">
+                        </figure>
+                      </div>
+                      <p>For people who have trouble making decisions. Describe your difficult decision, and other users will vote on the best option. If the choice you make turns out to be successful, then users who voted for it will receive a reputation boost, meaning their votes will count for more in the future.</p>
+                    </dd>
+                  </div>
+                  <div class="project" data-project-name="lft">
+                    <dt>
+                      <a href="https://looking-for-tutor.herokuapp.com" target="_blank"><span class="project__title">LFT</span> (Looking for Tutor)</a>
+                      <ul class="icons">
+                        <li class="screenshot__toggle">
+                          <button class="icon">
+                            <svg class="fa-solid fa-camera" title="See GIF" height="1em" width="1em">
+                            </svg>
+                          </button>
+                        </li>
+                        <li>
+                          <a class="icon" href="https://github.com/rmgodfrey/lft" target="_blank">
+                            <svg class="fa-brands fa-github" title="Source code on GitHub" height="1em" width="1em">
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </dt>
+                    <dd>
+                      <div class="screenshot__container screenshot__container--inline">
+                        <figure>
+                          <img src="/images/lft/lft.gif" alt="A short video displays LFT in action. First, the user views lessons that they have already taken. Then, they go to the home page, and type “science” into the search bar. Lessons for various types of science (e.g., political science and computer science) are displayed. The user scrolls to a computer science lesson, and clicks on “Book Now.” They are taken to a page with a map that displays the location of the lesson, and a form that allows them to choose a day and time for the lesson." class="screenshot" tabindex="0">
+                        </figure>
+                      </div>
+                      <p>Connects students with tutors in a variety of subjects, all over the world. Students can book lessons with tutors, and can leave reviews, to let other students know how the lesson went.</p>
+                    </dd>
+                  </div>
                 </dl>
                 <h3>Python</h3>
                 <dl class="project__container">
-                  <dt class="project">
-                    IDLE Chess
-                    <ul class="icons">
-                      <li>
-                        <a class="icon" href="https://github.com/rmgodfrey/idle-chess" target="_blank">
-                          <svg class="fa-brands fa-github" title="Source code on GitHub" height="1em" width="1em">
-                          </svg>
-                        </a>
-                      </li>
-                    </ul>
-                  </dt>
-                  <dd>
-                    <p>A chess program for two people to play at the same command line. This dates back to my pre-bootcamp days.</p>
-                  </dd>
+                  <div class="project">
+                    <dt>
+                      <span class="project__title">IDLE Chess</span>
+                      <ul class="icons">
+                        <li class="screenshot__toggle">
+                          <button class="icon">
+                            <svg class="fa-solid fa-camera" title="See GIF" height="1em" width="1em">
+                            </svg>
+                          </button>
+                        </li>
+                        <li>
+                          <a class="icon" href="https://github.com/rmgodfrey/idle-chess" target="_blank">
+                            <svg class="fa-brands fa-github" title="Source code on GitHub" height="1em" width="1em">
+                            </svg>
+                          </a>
+                        </li>
+                      </ul>
+                    </dt>
+                    <dd>
+                      <div class="screenshot__container screenshot__container--inline">
+                        <figure>
+                          <img src="/images/idle_chess/idle_chess.gif" alt="A short video shows a user running IDLE Chess in their terminal. A chess board is displayed, with the pieces in their starting positions. The user types “c4”, and the white pawn at space c2 moves to c4.The user then types “b6”, and the black pawn at space b7 moves to b6. The user then types “Qa4”, and the white queen at space d1 moves to a4. Finally, the user types “r”, and a message appears saying “Black resigns. White wins!”" class="screenshot" tabindex="0">
+                        </figure>
+                      </div>
+                      <p>A chess program for two people to play at the same command line. This dates back to my pre-bootcamp days.</p>
+                    </dd>
+                  </div>
                 </dl>
               </div>
             </div>
@@ -181,30 +204,22 @@
             </div>
           </section>
         </div>
-        <aside class="screenshot__container screenshot__container--margin">
-          <div class="screenshot__project" data-project-name="choice-point" hidden>
-            <h2>ChoicePoint</h2>
-            <figure>
-              <img src="/images/choice_point/homepage.png" alt="A screenshot of the home page of ChoicePoint, listing various questions that users have posted." class="screenshot" tabindex="0">
-            </figure>
-            <figure>
-              <img src="/images/choice_point/past_choice_points.png" alt="A screenshot of the user’s past questions on ChoicePoint, with horizontal bars displaying scores for various options, and an interface allowing the user to say which option they chose, and whether it was successful." class="screenshot" tabindex="0">
-            </figure>
-          </div>
-          <div class="screenshot__project" data-project-name="lft" hidden>
-            <h2>LFT</h2>
-            <figure>
-              <img src="/images/lft/homepage.png" alt="A screenshot of the home page of LFT, listing various lessons offered by tutors." class="screenshot" tabindex="0">
-            </figure>
-            <figure>
-              <img src="/images/lft/lesson.png" alt="A screenshot of a lesson advertisement on LFT, with an interface allowing the user to book the lesson. The ad also contains a map showing the location of the lesson, as well as another user’s review of the lesson." class="screenshot" tabindex="0">
-            </figure>
-          </div>
-        </aside>
+        <div class="screenshot__outer-container--margin">
+          <div class="screenshot__container screenshot__container--margin">
+            <aside class="screenshot__inner-container"></aside>
+            <template>
+              <div class="screenshot__project">
+                <h2 class="screenshot__project-title"></h2>
+                <figure></figure>
+              </div>
+            </template>
+          </aside>
+        </div>
       </main>
       <footer class="footer">
         <a href="https://github.com/rmgodfrey/rmgodfrey.github.io" target="_blank">Click here to view the source code for this website.</a>
       </footer>
+      <div class="grid__left-margin"></div>
     </div>
     <div class="modal screenshot__theatre" hidden>
       <div class="modal__focus-start" tabindex="0"></div>

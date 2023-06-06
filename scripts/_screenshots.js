@@ -2,34 +2,40 @@ import { trapFocus } from './_modals.js';
 
 const projects = document.querySelectorAll('.project');
 const screenshots = document.querySelectorAll('.screenshot');
-const sidebarThumbnails = document.querySelectorAll(
-  '.screenshot__container--margin .screenshot__project'
+const sidebarThumbnails = document.querySelector(
+  '.screenshot__container--margin'
 );
 const theatre = document.querySelector('.screenshot__theatre');
 const frame = document.querySelector('.screenshot__frame');
 
 let openThumbnail = null;
-let revealedSidebarThumbnails = null;
 
-const revealSidebarThumbnails = (projectName) => () => {
-  // If thumbnails are already revealed, hide them.
-  if (revealedSidebarThumbnails) {
-    revealedSidebarThumbnails.hidden = true;
-  }
-  // Find sidebar thumbnails corresponding to requested project
-  const projectSidebarThumbnails = Array.prototype.find.call(
-    sidebarThumbnails,
-    thumbnails => thumbnails.dataset.projectName === projectName
+const revealSidebarGif = (project) => () => {
+  const projectId = project.dataset.projectName;
+  const projectTitle = project.querySelector('.project__title').innerText;
+  const thumbnail = sidebarThumbnails.querySelector(
+    `[data-project-name=${projectId}]`
   );
-  // If these thumbnails are different from the ones that were already revealed,
-  // show them.
-  if (projectSidebarThumbnails !== revealedSidebarThumbnails) {
-    projectSidebarThumbnails.hidden = false;
-    revealedSidebarThumbnails = projectSidebarThumbnails;
+  if (thumbnail) {
+    thumbnail.remove();
   } else {
-    revealedSidebarThumbnails = null;
+    const gif = project.querySelector('.screenshot')
+      .cloneNode(true);
+    gif.addEventListener('click', enlarge);
+    const screenshotProject = sidebarThumbnails.querySelector('template')
+      .content
+      .cloneNode(true)
+      .querySelector('.screenshot__project');
+      screenshotProject.querySelector('.screenshot__project-title').innerText
+      = projectTitle;
+      screenshotProject.querySelector('figure').append(gif);
+    screenshotProject.dataset.projectName = projectId;
+    sidebarThumbnails
+      .querySelector('.screenshot__inner-container')
+      .prepend(screenshotProject);
+    sidebarThumbnails.scrollTop = 0;
   }
-};
+}
 
 const enlarge = (event) => {
   // Display modal
@@ -99,7 +105,7 @@ Array.prototype.forEach.call(
   project => {
     const button = project.querySelector('.screenshot__toggle');
     button?.addEventListener(
-      'click', revealSidebarThumbnails(project.dataset.projectName)
+      'click', revealSidebarGif(project)
     );
   }
 );
